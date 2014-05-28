@@ -20,6 +20,12 @@ Add a `<script>` to your `index.html`:
 <script src="bower_components/angular-localization/angular-localization.js"></script>
 ```
 
+Inject the dependency into your application module
+
+```js
+angular.module('myApp', ['ngLocalize']);
+```
+
 ## Documentation
 
 Documentation is available on the

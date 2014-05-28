@@ -1,5 +1,5 @@
 /**
- * angular-localization :: v1.0.0 :: 2014-05-27
+ * angular-localization :: v1.0.0 :: 2014-05-28
  * web: https://github.com/doshprompt/angular-localization
  *
  * Copyright (c) 2014 | Rahul Doshi
@@ -78,7 +78,6 @@ angular.module('ngLocalize', ['ngCookies', 'ngLocalize.Config', 'ngLocalize.Even
             }
 
             function loadBundle(token) {
-                // Assert bundle at set "loading" flag to prevent going after it again.
                 var path = token ? token.split('.') : '',
                     root = bundles,
                     url = localeConf.basePath + '/' + currentLocale,
@@ -217,14 +216,13 @@ angular.module('ngLocalize', ['ngCookies', 'ngLocalize.Config', 'ngLocalize.Even
                 if (angular.isString(txt) && !subs && txt.indexOf(localeConf.delimiter) != -1) {
                     A = txt.split(localeConf.delimiter);
                     txt = A[0];
-                    console.log(A[1]);
                     subs = angular.fromJson(A[1]);
                 }
 
                 isValidToken = isToken(txt);
                 if (isValidToken) {
-                    if (subs && !angular.isArray(subs)) {
-                        // subs = [subs];
+                    if (!angular.isObject(subs)) {
+                        subs = [subs];
                     }
 
                     bundle = getBundle(txt);

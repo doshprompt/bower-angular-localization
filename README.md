@@ -1,4 +1,5 @@
 # bower-angular-localization
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/doshprompt/bower-angular-localization?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This repo is for distribution on `bower`. The source for this module is in the
 [main AngularJS Localization repo](https://github.com/doshprompt/angular-localization).
